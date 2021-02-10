@@ -64,8 +64,8 @@ router.put('/:id', (req, res) => {
         .status(400)
         .json({ message: 'Please provide title and contents for the post' });
     } else {
-      Post.update(targetId, changes).then((id) => {
-        id
+      Post.update(targetId, changes).then((i) => {
+        i
           ? Post.findById(targetId).then((post) => res.status(200).json(post))
           : res.status(404).json({
               message: 'The post with the specified ID does not exist',
